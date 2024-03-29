@@ -20,7 +20,10 @@ We can use a feature system so files that need to communicate are close to each 
 
 Instead of defining a class with all its getters and setter, we can simply use a `record`, which does all the work for us.
 
-### API & MVC
+### Database
+
+After getting the dependencies `H2 Database` (Database) & `JDBC API` (connection to database), we can access the database with the url `http://localhost:8080/h2-console`, and login with default fields.  
+If the database doesn't exists, might be wrong. Replace `JDBC URL` with the one written on the terminal at `com.zaxxer.hikari.pool.HikariPool`.
 
 # Getting Started
 

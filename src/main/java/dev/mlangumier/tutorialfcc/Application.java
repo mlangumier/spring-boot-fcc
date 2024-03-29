@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 
 import dev.mlangumier.tutorialfcc.run.Location;
 import dev.mlangumier.tutorialfcc.run.Run;
+import dev.mlangumier.tutorialfcc.run.RunRepository;
 
 @SpringBootApplication
 public class Application {
@@ -33,12 +34,15 @@ public class Application {
 	 * Get test info on our classes (ex: Run)
 	 * @return
 	 */
-	@Bean
-	CommandLineRunner runner() {
-		return args -> {
-			Run run = new Run(1, "Box training", LocalDateTime.now().minus(1, ChronoUnit.HOURS), LocalDateTime.now(), 3, Location.GYM);
-			log.info("Run: " + run);
-		};
-	}
+	// @Bean
+	// CommandLineRunner runner(RunRepository runRepository) {
+	// 	return args -> {
+	// 		Run run = new Run(1, "Box training", LocalDateTime.now().minus(1, ChronoUnit.HOURS), LocalDateTime.now(), 3, Location.GYM);
+			
+	// 		log.info("Run: " + run); // Allows us to check some data
+
+	// 		runRepository.create(run); // Will create our data when the server starts
+	// 	};
+	// }
 
 }
