@@ -10,8 +10,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import dev.mlangumier.tutorialfcc.workout.Location;
-import dev.mlangumier.tutorialfcc.workout.Workout;
+import dev.mlangumier.tutorialfcc.run.Location;
+import dev.mlangumier.tutorialfcc.run.Run;
 
 @SpringBootApplication
 public class Application {
@@ -30,14 +30,14 @@ public class Application {
 	}
 
 	/**
-	 * Get test info on our classes (ex: Workout)
+	 * Get test info on our classes (ex: Run)
 	 * @return
 	 */
 	@Bean
 	CommandLineRunner runner() {
 		return args -> {
-			Workout workout = new Workout(1, "Box training", LocalDateTime.now().minus(1, ChronoUnit.HOURS), LocalDateTime.now(), 3, Location.GYM);
-			log.info("Workout: " + workout);
+			Run run = new Run(1, "Box training", LocalDateTime.now().minus(1, ChronoUnit.HOURS), LocalDateTime.now(), 3, Location.GYM);
+			log.info("Run: " + run);
 		};
 	}
 

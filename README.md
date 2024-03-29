@@ -1,10 +1,14 @@
 # Tutorial
 
-This project follows the tutorial from [FreeCodeCamp.org on Youtube](https://www.youtube.com/watch?v=31KTdfRH6nY&t=288s), where we'll be able to note our workout sessions.
+This project follows the tutorial from [FreeCodeCamp.org on Youtube](https://www.youtube.com/watch?v=31KTdfRH6nY&t=288s), where we'll be able to note our running sessions.
 
-## Basics
+## Start server
 
 Can run the project with VsCode (icon "play") or in terminal with Maven by typing `./mvnw spring-boot:run`
+
+Can change the server port in `/ressources/application.properties`
+
+Can also use `http :8080 /api/runs` or any other URL we have in our API to check the results.
 
 ### Layers vs Feature
 
@@ -15,6 +19,8 @@ We can use a feature system so files that need to communicate are close to each 
 ### Defining a class
 
 Instead of defining a class with all its getters and setter, we can simply use a `record`, which does all the work for us.
+
+### API & MVC
 
 # Getting Started
 
