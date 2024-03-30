@@ -2,9 +2,12 @@
 
 This project follows the tutorial from [FreeCodeCamp.org on Youtube](https://www.youtube.com/watch?v=31KTdfRH6nY&t=288s), where we'll be able to note our running sessions.
 
+Other projects ideas can be found on the official [Spring.io](https://spring.io/projects/spring-boot) website.
+
 ## Start server
 
-Can run the project with VsCode (icon "play") or in terminal with Maven by typing `./mvnw spring-boot:run`
+Can run the project with VsCode (icon "play") or in terminal with Maven by typing
+`./mvnw spring-boot:run`
 
 Can change the server port in `/ressources/application.properties`
 

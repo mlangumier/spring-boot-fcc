@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 
-
 @RestController
 @RequestMapping("/api/runs") // Defines the base of URL for this controller
 public class RunController {
@@ -49,18 +48,24 @@ public class RunController {
     @ResponseStatus(HttpStatus.CREATED) // 201: creation successfull
     // @Valid: uses "spring-boot-starter-validation" to check if data is ok, then throws or continues
     public void create(@Valid @RequestBody Run run) {
-        runRepository.create(run);
+        runRepository.save(run);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT) // No content to send back, but not a 200
     public void update(@Valid @PathVariable Integer id, @RequestBody Run run) {
-        runRepository.update(run,id);
+        runRepository.save(run);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Integer id) {
-        runRepository.delete(id);
+        runRepository.delete(runRepository.findById(id).get());
     }
+
+    @GetMapping("/location/{location}")
+    public List<Run> findbyLocation(@PathVariable String location) {
+        return runRepository.findAllByLocation(location.toUpperCase());
+    }
+    
 }
